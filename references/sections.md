@@ -44,7 +44,7 @@ Section~\ref{sec:method}, namely ... (Fig.~\ref{fig:ablation2}), as well as ... 
 ## Caption
 
 ```latex
-\caption{\textbf{\m{}~policy learns faster, from fewer demonstrations, and at every model size.} Success rates
+\caption{\textbf{Learning efficiency in imitation learning.} Success rates
 on LIBERO ... \textbf{(a)} ... \textbf{(b)} ... \TODO{replace placeholder std after seeds 0 and 1}}
 ```
 

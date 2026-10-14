@@ -54,8 +54,9 @@ See `references/sections.md` for templates. The essentials:
   Emphasise our absolute best result rather than derived ratios (e.g., highest success, not "retention ratio").
 - **Ablations** open with one paragraph grouping the ablations and pointing to figures, then one bold run-in
   paragraph per factor. Relate findings to prior work with citations where they agree.
-- **Captions** open with a bold takeaway sentence (`\caption{\textbf{X learns faster ... .} Details ...}`),
-  then describe panels with `\textbf{(a)}`. Each figure gets a distinct title.
+- **Captions** open with a bold title that names only what is tested, not the result
+  (`\caption{\textbf{Learning efficiency in imitation learning.} Details ...}`, user 2026-10-14), then describe
+  panels with `\textbf{(a)}`. Each figure gets a distinct title. The takeaway goes in the text, not the title.
 - **Discussion** is open and suggestive, not a to-do list. Frame items as possibilities the method opens
   ("This hints that ...", "might even ...", "natural to express with ... but hard with ..."), never
   "is left for future work" or "we will".

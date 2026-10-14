@@ -29,7 +29,9 @@ render the PNG and look at it before pushing.
 - Std over seeds as bands (lines) or whiskers (bars). Placeholder std only when the user asks, flagged in the caption.
 - Text and labels must not overlap curves; inset/annotation boxes move to empty space. Tick labels kept off lines.
 - No separate legend when an inset or direct labels already identify the methods.
-- Gains shown as arrows with the value (e.g., "+12.3") rather than extra whiskers.
+- Gains shown as arrows with the value (e.g., "+12.3") rather than extra whiskers. When the gap is small or the
+  curves crowd the point, use a slim bracket beside it with a rotated label, outside the curves.
+- Keep the first x tick close to the y axis; make room for labels with brackets, not with a wide empty margin.
 - Zoom insets: dashed outline, tick labels off.
 - Images inside plots (robots, tasks) at reduced alpha (≈0.55), zorder below grid-sensitive elements, shadows removed.
   Flag brand/copyright concerns for third-party images.
