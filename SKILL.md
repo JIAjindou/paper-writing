@@ -68,7 +68,7 @@ See `references/sections.md` for templates. The essentials:
 - **Captions** open with a bold title that names only what is tested, not the result
   (`\caption{\textbf{Learning efficiency in imitation learning.} Details ...}`, user 2026-10-14), then describe
   panels with `\textbf{(a)}`. Each figure gets a distinct title. The takeaway goes in the text, not the title.
-- **Discussion** is open and suggestive- **Every subsection opens with a transition** that says what this part does ("We next examine how fast ..."),
+- **Every subsection opens with a transition** that says what this part does ("We next examine how fast ..."),
   not with a summary of the result (user 2026-10-17). The takeaway comes at the end of the paragraph.
 - **Experiments intro**: numbered questions only for the core claims. Real-robot deployment and ablations are
   stated as sentences ("We then deploy ... and finally ablate ..."), not as questions.
