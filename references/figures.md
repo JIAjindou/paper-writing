@@ -35,3 +35,18 @@ render the PNG and look at it before pushing.
 - Zoom insets: dashed outline, tick labels off.
 - Images inside plots (robots, tasks) at reduced alpha (≈0.55), zorder below grid-sensitive elements, shadows removed.
   Flag brand/copyright concerns for third-party images.
+
+## Annotations and photo figures (journal style)
+- Plain text annotations: no background boxes, no shadows, no glow or light cones ("太AI了"). Thin leader
+  ending in a small dot, thin motion arrows in one accent color. White text on dark regions, ink on light ones.
+- Zoom insets of photos keep a thin ink border; no connecting cone.
+- Real-robot montages: same frame size across figures, row labels in the left margin, "Step k  Name" above
+  frames, success-rate bars to the right, centered vertically on the frames.
+- Keep execution montages and quantitative plots (inference time, smoothness) as separate figures rather than
+  stacking them.
+
+## Grids
+- For a grid of panels, give the legend its own empty slot and say which panels use which setting there
+  (e.g., "(a)-(d) PPO", "(e)-(g) FlashSAC") instead of a caption line.
+- Every panel keeps its own y tick labels when scales differ. Task titles name robot and task, aligned across rows.
+- Robot icons the same size across a row, inside the axes, may sit behind the curves.
