@@ -24,7 +24,8 @@ render the PNG and look at it before pushing.
 
 ## Layout
 - Open frame (no top/right spines), light grid at tick positions.
-- Panel titles bold: "(a) Training epochs". Each panel title distinct and meaningful.
+- Panel titles bold and centered over their panel (user 2026-10-19): "(a) Training epochs". Each panel title distinct
+  and meaningful. Raise a title with `pad` when in-plot labels sit near the top.
 - Log axes are labeled as such: "Training epoch (log scale)".
 - Std over seeds as bands (lines) or whiskers (bars). Placeholder std only when the user asks, flagged in the caption.
 - Text and labels must not overlap curves; inset/annotation boxes move to empty space. Tick labels kept off lines.
