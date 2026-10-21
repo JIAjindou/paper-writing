@@ -27,7 +27,11 @@ render the PNG and look at it before pushing.
 - Panel titles bold and centered over their panel (user 2026-10-19): "(a) Training epochs". Each panel title distinct
   and meaningful. Raise a title with `pad` when in-plot labels sit near the top.
 - Log axes are labeled as such: "Training epoch (log scale)".
-- Std over seeds as bands (lines) or whiskers (bars). Placeholder std only when the user asks, flagged in the caption.
+- Std over seeds as bands (lines) or whiskers (bars). With one seed, the band is the std over suites, and the caption
+  says so. Placeholder std only when the user asks, flagged in the caption.
+- When panels show different method sets, each panel gets its own legend (no shared legend that lists methods a
+  panel does not have).
+- A figure with little content may be narrower than the text width (e.g., 5.0 in), centered, rather than stretched.
 - Text and labels must not overlap curves; inset/annotation boxes move to empty space. Tick labels kept off lines.
 - No separate legend when an inset or direct labels already identify the methods.
 - Gains shown as arrows with the value (e.g., "+12.3") rather than extra whiskers. When the gap is small or the
@@ -45,6 +49,11 @@ render the PNG and look at it before pushing.
   frames, success-rate bars to the right, centered vertically on the frames.
 - Keep execution montages and quantitative plots (inference time, smoothness) as separate figures rather than
   stacking them.
+- Frames can be cut from the rollout videos. Make a 1 s contact sheet with timestamps, pick one frame per step,
+  crop to the frame aspect of the other montages (775x480), and match the color of the earlier frames, which the
+  user brightened and tinted blue by hand. Use `assets/real_color_match.py` (an affine color map through five anchor
+  colors: green screen, table, dark and mid gray of the robot, the vase). Per-channel histogram matching turned the
+  gray robot purple, and four anchors without the vase turned it pink. Compare the new figure next to an old one.
 
 ## Grids
 - For a grid of panels, give the legend its own empty slot and say which panels use which setting there

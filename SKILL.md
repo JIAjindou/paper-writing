@@ -86,6 +86,14 @@ See `references/sections.md` for templates. The essentials:
   ("This hints that ...", "might even ...", "natural to express with ... but hard with ..."), never
   "is left for future work" or "we will".
 
+## 3b. Adding an experiment
+
+A new task (e.g., a further real-robot task) touches every place where the tasks are listed, not only a new
+paragraph. Check the Setup list of tasks, the subsection opening sentence, a bold run-in results paragraph with
+figure, the evaluation protocol sentence (trials, epochs), and the appendix details (demonstrations, cameras).
+Ask for trials, epochs, and the number of demonstrations if they are missing, and leave Intro, abstract, and
+Discussion to the user.
+
 ## 4. TODOs
 
 - `\TODO{}` lives in the .tex prose, never inside generated `tables/*.tex` or figure files.
@@ -119,6 +127,10 @@ blue-green ramp with ours darkest, lines alpha 0.65 / bands alpha 0.2, open fram
 text never overlapping curves. Render to PNG and look at it before pushing.
 Figures go `[!tbp]` and close to their first reference (raise `topnumber`, `topfraction`); Fig. 1 goes `[t]`
 at the top of page 2, never above the abstract. Section numbers, links, and caption labels use the figure blue.
+
+## 6b. Project website
+
+The project page has its own skill in `website/SKILL.md` (linked as `~/.claude/skills/project-website`).
 
 ## 7. Iterating on this skill
 
