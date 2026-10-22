@@ -46,6 +46,10 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
    Prefer concrete numbers with units (`3.5\,ms`, `22.8 hours`, `95.0\%`).
 9. Name components by what they do, not how they are implemented (e.g., "contractive perturbation" over
    "start-point perturbation"; "seamless chunking" over "continuous execution").
+9b. Name the class of baselines by the property that contrasts with ours, and check it cannot be misread in a
+   neighbouring literature. "Discrete policy" was read as "quantized action tokens", so ODE Policy uses
+   "direct-action policies" (the network outputs the action values themselves) with a one-sentence definition
+   in Preliminaries.
 10. Say "three random seeds", never list seed numbers.
 11. Hedge what is not verified and scope claims to what was tested: "likely because ...", "on three of the four
     tasks", "on most tasks", "occurs in only a small part of robot tasks" (not "is rare"). A reason given as a
