@@ -54,7 +54,9 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
 11. Hedge what is not verified and scope claims to what was tested: "likely because ...", "on three of the four
     tasks", "on most tasks", "occurs in only a small part of robot tasks" (not "is rare"). A reason given as a
     fact must be tested; otherwise mark it as likely.
-12. Panel ranges use a single hyphen, "Fig.~\ref{fig:rl}(a-d)". "Fig." for panels of one figure, "Figs." only
+12. Panel letters are Science-style capitals (user 2026-10-30): bold "A", "B" in the figures (no parentheses),
+    `\textbf{(A)}` in captions, "Fig.~\ref{fig:rl}(B)" in the text. Panel ranges use a single hyphen,
+    "Fig.~\ref{fig:rl}(A-D)". "Fig." for panels of one figure, "Figs." only
     for several figures.
 13. **No overlong paragraphs** (main text and appendix). When a paragraph covers several groups (e.g., simulated
     benchmarks, then tasks of each robot), split it into one bold run-in paragraph per group
@@ -75,7 +77,7 @@ See `references/sections.md` for templates. The essentials:
   paragraph per factor. Relate findings to prior work with citations where they agree.
 - **Captions** open with a bold title that names only what is tested, not the result
   (`\caption{\textbf{Learning efficiency in imitation learning.} Details ...}`, user 2026-10-14), then describe
-  panels with `\textbf{(a)}`. Each figure gets a distinct title. The takeaway goes in the text, not the title.
+  panels with `\textbf{(A)}`. Each figure gets a distinct title. The takeaway goes in the text, not the title.
 - **Every subsection opens with a transition** that says what this part does ("We next examine how fast ..."),
   not with a summary of the result (user 2026-10-17). The takeaway comes at the end of the paragraph.
 - **Experiments intro**: numbered questions only for the core claims. Real-robot deployment and ablations are
