@@ -56,6 +56,10 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
     fact must be tested; otherwise mark it as likely.
 12. Panel ranges use a single hyphen, "Fig.~\ref{fig:rl}(a-d)". "Fig." for panels of one figure, "Figs." only
     for several figures.
+13. **No overlong paragraphs** (main text and appendix). When a paragraph covers several groups (e.g., simulated
+    benchmarks, then tasks of each robot), split it into one bold run-in paragraph per group
+    ("Simulated benchmarks." / "Dual-arm robot tasks." / "Dexterous-hand tasks."). A shared fact goes once at the
+    start of the paragraph it applies to (user, 2026-10-30, appendix Benchmarks paragraph).
 
 ## 3. Section patterns
 
