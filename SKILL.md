@@ -77,6 +77,9 @@ See `references/sections.md` for templates. The essentials:
 - **Results paragraph** = what was run (with figure ref) → key numbers → why → **one concluding sentence**
   that states the takeaway ("Chunking is therefore essential, and $H=8$ balances ...").
   Emphasise our absolute best result rather than derived ratios (e.g., highest success, not "retention ratio").
+  Prefer words over numbers for what a figure already shows, but keep every number that no figure shows (e.g., an
+  absolute return when the figure plots only gains, a baseline absent from the plot, failure counts). Never compress
+  those away (user 2026-10-31).
 - **Ablations** open with one paragraph grouping the ablations and pointing to figures, then one bold run-in
   paragraph per factor. Relate findings to prior work with citations where they agree.
 - **Captions** open with a bold title that names only what is tested, not the result
