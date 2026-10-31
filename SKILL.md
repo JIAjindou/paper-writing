@@ -62,6 +62,10 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
     benchmarks, then tasks of each robot), split it into one bold run-in paragraph per group
     ("Simulated benchmarks." / "Dual-arm robot tasks." / "Dexterous-hand tasks."). A shared fact goes once at the
     start of the paragraph it applies to (user, 2026-10-30, appendix Benchmarks paragraph).
+14. **Short sentences by default**, one idea each (user, 2026-10-31). Keep a long sentence only where its structure
+    carries the meaning, e.g., a parallel list or a cause and effect that belong together. Split chains of
+    "and ..., which ..., while ..." into separate sentences, and check that a merged clause stays logical (e.g.,
+    training cost is not caused by the data, so it gets its own sentence).
 
 ## 3. Section patterns
 
