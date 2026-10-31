@@ -132,6 +132,8 @@ Discussion to the user.
 - Do not cite a framework or tool to support a claim it does not make (e.g., Orbit for RL sample cost).
 - Flag arXiv IDs, venues, and years that cannot be verified (recent preprints, future venues) for manual checking.
 - **Any entry written from memory must be flagged to the user for checking**, listing the keys.
+  Also append it to `notes/bib_to_check.md` in the paper repo (key, entry as written, where it is cited, what to
+  verify, a checkbox), so the user can check all of them later (user, 2026-10-31).
 
 ## 6. Figures
 
