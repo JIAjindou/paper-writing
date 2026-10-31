@@ -23,10 +23,16 @@ Reply in concise Chinese, conclusion first. The page is in English. The user dec
 ## 2. Structure and tone
 
 Order: **cover → epigraph → idea → results → method → BibTeX**. Concise and high-end ("精简高端").
-- **Cover**: the best real-robot demo fills the first screen (autoplay, muted, loop, playsinline), dark gradient at
+- **Cover**: once there are many tasks, a full-screen 4x4 grid of short autoplay rollouts (480x270, crf 30, 1-4x,
+  a small task label per tile) gives the first impression (user, 2026-10-31). Shuffle the tiles so the same robot is
+  never next to itself, reuse tasks with several modes (both modes of a multi-modal task), 2 columns on phones.
+  Before that, the best real-robot demo fills the first screen (autoplay, muted, loop, playsinline), dark gradient at
   the bottom-left, title, authors, buttons (Paper / Code "soon", BibTeX) over it, a small "Autonomous · 2×" tag.
 - **Epigraph** on its own band, large italic serif (Instrument Serif), translation and author small below.
 - **Idea**: one sentence, then the core comparison as two animations side by side (no toggle buttons).
+- **Results first, method after.** A gallery of all real-robot tasks (one card per task with the ODE video, a
+  one-line description, and bars for ours against the best baseline), grouped by robot, pending tasks marked
+  "coming soon".
 - **Results**: a row of four headline numbers, then one block per claim in the order of the paper
   (learns fast, executes precisely and smoothly, generalizes, multi-modality). In each block, videos first, then charts.
 - **Method**: numbered steps. Each step is a row with title and text on the left and its equation (KaTeX) in a card
