@@ -152,6 +152,8 @@ Project page and code links in the title block as clickable icons with a short l
 ## 6b. Project website
 
 The project page has its own skill in `website/SKILL.md` (linked as `~/.claude/skills/project-website`).
+The promo film has its own skill in `video/SKILL.md` (`~/.claude/skills/promo-video`), and the whole pipeline
+(paper, website, film, consistency) is in `project/SKILL.md` (`~/.claude/skills/paper-project`).
 
 ## 7. Iterating on this skill
 

@@ -5,7 +5,7 @@ description: Jindou Jia's conventions for building and updating a paper's projec
 
 # Project website (Jindou Jia's style)
 
-Distilled from the ODE Policy page (https://jiajindou.github.io/ODE/, repo `JIAjindou/ODE`, 2026-10).
+Distilled from the ODE Policy page (https://ntumars.github.io/ODE/, repo `NTUMARS/ODE`, 2026-10/11).
 Reply in concise Chinese, conclusion first. The page is in English. The user decides the content; draft, then let them cut.
 
 ## 1. Stack and workflow
@@ -82,6 +82,18 @@ Order: **cover → epigraph → idea → results → method → BibTeX**. Concis
   subscripts (`rich()` helper), the dot of ȧ drawn by hand (the combining dot drifts in canvas text).
 - Use analytic paths when the meaning requires it (all routes leave the start and meet exactly at the goal).
 - Interactive demos play by themselves (e.g., the control rate cycles 20/40/80 Hz); no sliders or buttons needed.
+- Keep each animation's cycle length obvious in the code (one constant), since the promo film records them and plays
+  exactly one cycle (`promo-video` skill).
+
+## 5b. Later additions (2026-11)
+
+- **Video section** with the promo film right after the epigraph, linked from the nav and the cover buttons. The film
+  is excluded from the autoplay observer, plays with controls, pauses when out of view, poster = the paper's teaser.
+- Headline numbers can grow to five (one per claim, generalization included).
+- Generalization videos get the first-person training and test frames side by side next to each video, so the
+  change of scene is visible at a glance.
+- Multi-modal videos are trimmed to the key motion. When a figure is removed, renumber all figures.
+- Author names link to their homepages, as in the paper.
 
 ## 6. Pitfalls and checks
 
