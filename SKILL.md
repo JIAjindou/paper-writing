@@ -144,8 +144,8 @@ Follow `references/figures.md` and reuse `assets/style.py` (copy into the paper'
 ink `#44546A` instead of black, Arial, full-width figures exactly 6.5 in via `fit_width(fig)`,
 blue-green ramp with ours darkest, lines alpha 0.65 / bands alpha 0.2, open frame, bold panel titles,
 text never overlapping curves. Render to PNG and look at it before pushing.
-Figures go `[!tbp]` and close to their first reference (raise `topnumber`, `topfraction`); Fig. 1 goes on page 1 under the abstract when it fits (non-floating `center` with `\captionof{figure}`,
-width reduced until the caption fits, user 2026-11-01), otherwise `[t]` at the top of page 2, never above the abstract.
+Figures go `[!tbp]` and close to their first reference (raise `topnumber`, `topfraction`); Fig. 1 goes on page 1 between the authors and the abstract (`	easer{...}` hook of the class, `\captionof{figure}`),
+as large as the page allows with tight title spacing (user 2026-11-01). The abstract has no left hairline or indent.
 Project page and code links in the title block as clickable icons with a short label (fontawesome5 `aGlobe`,
 `aGithub`), not printed URLs (user 2026-11-01). Section numbers, links, and caption labels use the figure blue.
 
