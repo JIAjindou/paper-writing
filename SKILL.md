@@ -67,6 +67,11 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
     "and ..., which ..., while ..." into separate sentences, and check that a merged clause stays logical (e.g.,
     training cost is not caused by the data, so it gets its own sentence).
 
+- **Cite every method where it is named** (user, 2026-11-13). Each baseline or model gets its citation, and its
+  abbreviation is defined, at its first mention in the reading order. In journal formats where Results come before
+  Methods (Science Robotics), this is the Results, not the Setup. Add the citation again where a later sentence
+  discusses the method on its own (e.g., "A2A-DiT [x], which also starts from the previous actions, ...").
+
 ## 3. Section patterns
 
 See `references/sections.md` for templates. The essentials:
