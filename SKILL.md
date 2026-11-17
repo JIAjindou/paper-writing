@@ -58,6 +58,8 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
     `\textbf{(A)}` in captions, "Fig.~\ref{fig:rl}(B)" in the text. Panel ranges use a single hyphen,
     "Fig.~\ref{fig:rl}(A-D)". "Fig." for panels of one figure, "Figs." only
     for several figures.
+12b. When the main text writes numbers in math mode (`$20$`, `$85\%$`), captions do the same (user, 2026-11-17).
+    Model names keep plain digits (Franka Research 3, RTX 4090, GR00T N1.7, RK4).
 13. **No overlong paragraphs** (main text and appendix). When a paragraph covers several groups (e.g., simulated
     benchmarks, then tasks of each robot), split it into one bold run-in paragraph per group
     ("Simulated benchmarks." / "Dual-arm robot tasks." / "Dexterous-hand tasks."). A shared fact goes once at the
