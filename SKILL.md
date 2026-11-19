@@ -60,7 +60,9 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
     for several figures.
 12b. When the main text writes numbers in math mode (`$20$`, `$85\%$`), captions do the same (user, 2026-11-17).
     The appendix prose follows too, so every number is in math mode, except model names (RK4, RTX 4090) and
-    percentile ordinals (99th) (user, 2026-11-19).
+    percentile ordinals (99th) (user, 2026-11-19). The abstract and Introduction always use math mode for
+    numbers (`$81.7\%$`, `$0.541$\,ms`, unit outside the math), even in a paper whose other sections do not yet
+    (user, 2026-11-19).
 12c. Supplementary tables are referenced as "table~\ref{...}" (like "fig." for supplementary figures), with a
     capital T only at the start of a sentence (user, 2026-11-19).
     Model names keep plain digits (Franka Research 3, RTX 4090, GR00T N1.7, RK4).
