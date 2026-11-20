@@ -42,6 +42,8 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
 6. **Method names that are not abbreviations are lowercase** ("diffusion policy", `\m{}~policy`, "seamless chunking").
 7. Present tense, "we". Notation introduced in prose ("Let ... denote", "where ... represents"). Equations numbered.
    Citations woven into sentences with `\citep`. Transitions: "Notably", "To this end", "However", "Instead".
+   Equation references always read "Eq.~\eqref{...}" ("the objective in Eq.~\eqref{eq:cost}"), never a bare
+   `\eqref` (user, 2026-11-20).
 8. No marketing language ("remarkably", "significantly" without a test, "unprecedented").
    Prefer concrete numbers with units (`3.5\,ms`, `22.8 hours`, `95.0\%`).
 9. Name components by what they do, not how they are implemented (e.g., "contractive perturbation" over
