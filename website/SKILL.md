@@ -54,6 +54,8 @@ Order: **cover → epigraph → idea → results → method → BibTeX**. Concis
 - Encode with libx264 (the anaconda ffmpeg lacks it, use the static binary from the `imageio-ffmpeg` wheel):
   cover 1920 px crf 21, main players 1280 px crf 23, thumbnails crf 25, `-an`, `+faststart`, speed-up 2-3× with a
   speed badge on the video. Lazy-load with an IntersectionObserver (`data-src`), pause when out of view.
+- Method labels on videos ("ODE policy", "FM-DiT", "Real G1, outdoors") sit at the bottom right of the video, not
+  the top left (user, 2026-11-21), the speed badge stays top right, failure reasons at the bottom left.
 - Real-robot player: large ODE video on the left, task name, one-line description, success rates, and three
   baseline thumbnails (label plus failure reason) on the right. A click swaps the clicked clip with the large one:
   scroll the large player into view if needed, draw the current thumbnail frame into a canvas, fly it to the large

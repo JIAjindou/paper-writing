@@ -28,6 +28,8 @@ reviews every cut, so show half-resolution previews and change only what they na
 - **Results first, method after**: wall of rollouts, count of tasks, coverage (robot types and policy roles such as
   visuomotor policy, VLA, WAM, RL actor), one page per robot type, headline numbers, generalization,
   multi-modality, RL, then the idea and the method, then the outro.
+- A closing animation that assembles the teaser builds up in order (ring and logo, then sector by sector with
+  the photos appearing in place). No scattered start that flies into place, it looked messy (user, 2026-11-21).
 - The opening shot shows the most impressive task (the user chose humanoid loco-manipulation). Start the clip where
   the whole robot is in view (head included).
 - Every cut lands on a beat of the music (pages measured in beats, BPM from the track). Give number pages and
