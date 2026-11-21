@@ -1,4 +1,54 @@
-# Section templates (from the ODE Policy paper)
+# Section templates (from the ODE Policy and PolicyPilot papers)
+
+## Naming (title and method name)
+
+The user's names (jiajindou.com): ADAPT, APEX, MOSS, FLASH, MARS, TOPS, EVOLVER, FORESEER, ODE Policy, PolicyPilot.
+Two patterns are fine. One is an all-caps real word whose letters come from the subtitle (MOSS = Mode-Oriented
+Source Shaping, APEX = Adaptive Policy EXecution). The other is a CamelCase compound in the style of BeyondMimic
+(PolicyPilot). Title shape is "Name: <what it does> for <domain>" or "Name: <short claim>", with no abbreviation
+after the colon (no "MPC" in the title).
+
+Process used for PolicyPilot (2026-11-19):
+1. Read the paper's abstract and method, then propose three or four names in a table with meaning, title, and risk.
+   Do not pull letters from inside words (the old "ReSTRIDE" took the I from "predIctive").
+2. The user refines by feel ("too broad", "not focused"). LocoPilot was too broad, because "Loco" is all of
+   locomotion and "Pilot" suggests MPC is in charge. PolicyPilot kept the copilot metaphor and named what is
+   assisted. Offer ways to narrow (name the target, name the role, or move the domain into the subtitle).
+3. Before editing, check collisions with web searches on arXiv, GitHub, and the field (the exact name, a spaced
+   variant, and a "Copilot" variant). Report unrelated products separately from papers in the field.
+4. Then change `\papertitle`, the Introduction's "we propose" sentence, and every placeholder such as
+   `\textcolor{red}{our method}`. Leave the author's plain "our method" alone unless asked.
+
+## Introduction, last paragraph for a staged submission
+
+```latex
+This paper focuses on the formulation of PolicyPilot and its validation on representative disturbance scenarios.
+In the second stage, we plan to validate command generalization on hardware, beyond the simulation results
+reported here. We further plan an integrated hardware demonstration in which a single deployment encounters
+payloads, stairs, and lateral pulling in sequence.
+```
+
+## Experiments for a control or hardware paper (PolicyPilot)
+
+Without benchmarks or seeds, the section reads:
+- Intro with **(1)–(3)** questions on the core claims (robustness, generalization beyond training, online cost),
+  then one sentence for ablations and the real robot.
+- `Task Formulation` with the shared prior and one bold run-in per task for its references and extra cost terms.
+- `Robustness in Simulation` with bold run-ins Setup / Baselines / Metrics / Results. Each ablation baseline is
+  explained by what it removes ("RL+DO ... uses the same estimate without predictive optimization"), and the
+  oracle variant is called an upper reference.
+- `Hardware Deployment` with the setup, then run-ins Results and Disturbance estimation.
+- `Command Generalization` and `Computational Cost`, each opening with a transition sentence.
+
+## Conclusion (one paragraph)
+
+```latex
+We presented PolicyPilot, in which MPC acts as a copilot that corrects a frozen RL policy online. A proprioceptive
+observer estimates the external wrench, and MPC turns it into contact-force corrections under explicit objectives
+and constraints. In simulation and on hardware, PolicyPilot improves robustness to payloads and lateral pulling and
+control beyond the training range, without retraining and at $0.541$\,ms per cycle. Next, we plan to verify
+command generalization on hardware, ...
+```
 
 ## Experiments intro
 

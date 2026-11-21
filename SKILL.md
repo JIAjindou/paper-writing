@@ -5,8 +5,9 @@ description: Jindou Jia's conventions for writing robot-learning papers in LaTeX
 
 # Paper writing (Jindou Jia's style)
 
-Distilled from the ODE Policy paper (2026-10) and the earlier A2A paper (*Action-to-Action Flow Matching*,
-arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut. Default to fewer words.
+Distilled from the ODE Policy paper (2026-10), the earlier A2A paper (*Action-to-Action Flow Matching*,
+arXiv 2602.07322, RSS 2026), and the PolicyPilot paper (2026-11, a model-based control paper for the two-stage
+RSS 2027 review). The user decides what goes in. You draft, they cut. Default to fewer words.
 
 ## 1. Working protocol
 
@@ -26,6 +27,14 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
 - To check float placement or a new LaTeX construct, compile a scratch copy with stub packages and render pages
   with `gs -sDEVICE=png16m`. Delete stale `.aux` files after removing a package. Prefer constructs that do not
   depend on package versions (an old `titletoc` leaked hyperref anchors, so the appendix contents is hand-written).
+- After every pull, look at what the user changed on Overleaf (`git diff <last-own-commit> HEAD --word-diff`) before
+  editing the same file, and keep those edits. Collaborators push often, so also fetch right before pushing.
+- **Windows Git Bash halves backslashes** in commands and heredocs (`\textcolor` became a tab plus "extcolor", and
+  `\teaser`/`\faGlobe` in this skill were once corrupted the same way). Edit LaTeX with the Edit tool, or with a
+  Python script saved through the Write tool and run with `python -I`. Never `sed -i` a .tex file, since it also
+  rewrote every file's line endings.
+- When a figure has no data file in the repo, read its printed numbers with `pdftotext -layout fig.pdf -` and tell
+  the user they came from the figure, not from the raw data. Ask the user for the source data before redrawing.
 
 ## 2. Language rules (check every edited paragraph before pushing)
 
@@ -34,7 +43,10 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
    abbreviations, and bold run-in headings count as titles (`\textbf{{Reinforcement learning.}}`).
 3. **Every new variable gets its domain at first appearance**, scalars included:
    $\mathbf{s}_t\in\mathbb{R}^{d_s}$, $H\in\mathbb{N}$, $\rho\in(0,1)$. Name parameters ($\theta$) and operators
-   ($\odot$, sg). Never reuse a symbol for two things.
+   ($\odot$, sg). Never reuse a symbol for two things, and a bold and a plain version of one letter count as the
+   same symbol (PolicyPilot renamed the moment $\boldsymbol{\mu}_{\rm ex}$ to $\mathbf{n}_{\rm ex}$ because $\mu$ is
+   friction, and the nonlinear term $\mathbf{h}$ to $\mathbf{c}$ because $h$ is height, user 2026-11-20).
+   For a robot, state dimensions explicitly ($\mathbf{q}\in\mathbb{R}^{12}$, $\mathcal{Q}\in SE(3)\times\mathbb{R}^{12}$).
 4. **Non-scalars are bold**, including vector-valued functions ($\boldsymbol{\pi}$, $\mathbf{f}_\theta$).
    Model names like $\pi_{0.5}$ stay unbolded.
 5. **Person-named terms are italic**: \textit{Gaussian}, \textit{Euler}, \textit{Runge--Kutta}, \textit{Lipschitz},
@@ -81,6 +93,12 @@ arXiv 2602.07322, RSS 2026). The user decides what goes in. You draft, they cut.
   abbreviation is defined, at its first mention in the reading order. In journal formats where Results come before
   Methods (Science Robotics), this is the Results, not the Setup. Add the citation again where a later sentence
   discusses the method on its own (e.g., "A2A-DiT [x], which also starts from the previous actions, ...").
+- **Every from-to number names its baseline** ("from $6/10$ with the RL policy to $9/10$"), and a comparison
+  shown in a figure but missing from the text (e.g., a baseline error of $22.10^\circ$ against ours at $1.39^\circ$)
+  goes into the text (user, 2026-11-21).
+- **The user's own papers** are cited where they genuinely fit, typically in the Introduction's related work as a
+  contrast ("Others build structure into the policy itself, for example ..., which again requires retraining"),
+  not in the Conclusion (user, 2026-11-21).
 
 ## 3. Section patterns
 
@@ -117,6 +135,17 @@ See `references/sections.md` for templates. The essentials:
 - **Discussion** is open and suggestive, not a to-do list. Frame items as possibilities the method opens
   ("This hints that ...", "might even ...", "natural to express with ... but hard with ..."), never
   "is left for future work" or "we will".
+- **Conclusion** (papers without a Discussion section) is one short paragraph. Method in one sentence, mechanism in
+  one, results in one, then next steps with "we plan to" for a staged submission. No limitations sentence, no
+  citation, and no speculative outlook (the user cut all three in PolicyPilot, 2026-11-21).
+- **Section and subsection titles** are short (two or three words) and name what the part does, e.g.
+  "Residual Policy Correction", "Disturbance Estimation", "Predictive Force Correction", "Leg-Level Observer",
+  not "Framework Overview" or "Disturbance Modeling and Observation" (user, 2026-11-20).
+- **Staged submissions** (RSS 2027 Stage 1, see `paper-project`). The Introduction ends with a short paragraph
+  that first says what this paper already covers, then the concrete experiments and proofs planned for the next
+  stage ("In the second stage, we plan to ..."). Do not undersell the experiments that are already done.
+- **Title and method name**. See `references/sections.md` ("Naming") for the user's naming pattern and the
+  collision check.
 
 ## 3b. Adding an experiment
 
@@ -159,10 +188,10 @@ Follow `references/figures.md` and reuse `assets/style.py` (copy into the paper'
 ink `#44546A` instead of black, Arial, full-width figures exactly 6.5 in via `fit_width(fig)`,
 blue-green ramp with ours darkest, lines alpha 0.65 / bands alpha 0.2, open frame, bold panel titles,
 text never overlapping curves. Render to PNG and look at it before pushing.
-Figures go `[!tbp]` and close to their first reference (raise `topnumber`, `topfraction`); Fig. 1 goes on page 1 between the authors and the abstract (`	easer{...}` hook of the class, `\captionof{figure}`),
+Figures go `[!tbp]` and close to their first reference (raise `topnumber`, `topfraction`); Fig. 1 goes on page 1 between the authors and the abstract (`\teaser{...}` hook of the class, `\captionof{figure}`),
 as large as the page allows with tight title spacing (user 2026-11-01). The abstract has no left hairline or indent.
-Project page and code links in the title block as clickable icons with a short label (fontawesome5 `aGlobe`,
-`aGithub`), not printed URLs (user 2026-11-01). Section numbers, links, and caption labels use the figure blue.
+Project page and code links in the title block as clickable icons with a short label (fontawesome5 `\faGlobe`,
+`\faGithub`), not printed URLs (user 2026-11-01). Section numbers, links, and caption labels use the figure blue.
 
 ## 6b. Project website
 
