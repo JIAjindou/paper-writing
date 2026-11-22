@@ -183,6 +183,10 @@ Discussion to the user.
 - Reuse existing keys; grep before adding. New entries go at the end in the same style.
 - Uniform format: all conferences "Proceedings of the ..." without edition numbers (no "9th"), all journals one
   style. No `doi` and no `url` fields, except for web-only sources such as blog posts.
+- **RSS papers link every reference title** (RSS template requirement, user 2026-11-22), written as
+  `title = {\href{https://doi.org/...}{Title in Title Case}}` (arXiv abs page or publisher page when there is no
+  doi). Write every title in Title Case yourself, because the `\href` wrapper stops plainnat from changing the
+  case. The separate `doi` and `url` fields stay out.
 - Do not cite a framework or tool to support a claim it does not make (e.g., Orbit for RL sample cost).
 - Flag arXiv IDs, venues, and years that cannot be verified (recent preprints, future venues) for manual checking.
 - **Any entry written from memory must be flagged to the user for checking**, listing the keys.
