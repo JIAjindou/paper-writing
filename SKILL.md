@@ -84,6 +84,13 @@ RSS 2027 review). The user decides what goes in. You draft, they cut. Default to
     benchmarks, then tasks of each robot), split it into one bold run-in paragraph per group
     ("Simulated benchmarks." / "Dual-arm robot tasks." / "Dexterous-hand tasks."). A shared fact goes once at the
     start of the paragraph it applies to (user, 2026-10-30, appendix Benchmarks paragraph).
+13b. **No short last lines.** A paragraph, or the line before a display equation, must not end with a line of
+    fewer than three words (user, 2026-11-22). Compile locally (TeX Live is at `D:\Program Files\texlive`) into a
+    scratch copy, find such lines with PyMuPDF (a body line of at most two words after a near-full-width line,
+    ignoring the reference list and superscripts split into their own line), and cut a few words earlier in
+    the paragraph. Recompile to confirm.
+13c. **Only referenced equations are numbered** (user, 2026-11-22). An equation whose label is never referenced
+    becomes `equation*` without its label. Recheck after removing a reference.
 14. **Short sentences by default**, one idea each (user, 2026-10-31). Keep a long sentence only where its structure
     carries the meaning, e.g., a parallel list or a cause and effect that belong together. Split chains of
     "and ..., which ..., while ..." into separate sentences, and check that a merged clause stays logical (e.g.,
