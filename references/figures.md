@@ -60,3 +60,42 @@ render the PNG and look at it before pushing.
   (e.g., "(a)-(d) PPO", "(e)-(g) FlashSAC") instead of a caption line.
 - Every panel keeps its own y tick labels when scales differ. Task titles name robot and task, aligned across rows.
 - Robot icons the same size across a row, inside the axes, may sit behind the curves.
+
+## Teaser (Fig. 1) of a method paper
+Distilled from the StagePolicy teaser (2026-11-26, `2026-RSS-Jiayi/plots/fig_overview.py`, many rounds with the user).
+- **Content.** One row at full text width. (a) shows how the idea differs from prior methods, (b) the main effect.
+  Less information is fine, but a reader must see the contrast and the gain at a glance. Real-robot photos only
+  when real data exist; otherwise simulation only.
+- **Robot-like, not block-diagram-like.** The user rejected modular "AI-style" box diagrams. Draw the robot doing
+  the task: a line-art arm (white links with an ink outline, dark joints with an accent-colored core, an accent
+  band on each link, a two-finger gripper, a dark pedestal), a table, a target (bowl), translucent ghost poses
+  for the motion, and a small accent block for a payload. The dashed desired path, the executed path and the plan
+  points are drawn **above** the arm (higher zorder, thicker line, larger dots) and routed so the arm does not
+  cover them (arc the path over the elbow).
+- **Contrast lanes.** Baseline lane in neutral gray, ours in the paper's blue. Our method's name labels a dashed
+  frame around **all** of its parts (including optional modules), not just its first block. Optional modules
+  (e.g., a force channel, an online correction) are dashed and the caption says so. Each lane ends with a short
+  bold italic outcome ("misses the bowl" / "reaches the bowl").
+- **Networks.** A rounded pastel box with its title inside ("State predictor", "IDM net"), a small fully connected
+  net of filled nodes graded light to dark along the depth, edges in the box color at low alpha. Nodes generous
+  (radius about 0.05 in), never tiny.
+- **Arrows and labels.** Arrows between modules in ink. Feedback as a right-angle dashed path. Label signals with
+  the paper's notation (bold vectors, e.g. images $\mathbf{o}_t$, robot state $\mathbf{s}_t$, plan
+  $\hat{\mathbf{s}}_{t+1:t+H}$, commands $\mathbf{a}_t$, "measured $\mathbf{s}_t,\mathbf{v}_t$"). Input groups get a
+  light rounded box with an image stack and a state vector, each with a text label.
+- **Type.** Larger than plot figures: about 10.5 pt panel titles, 9.5 pt lane names, 9 pt text, 8.5 pt small
+  labels. Two-line labels need line spacing of at least 1.3. No text on lines or curves.
+- **Colors.** After trying several custom palettes, the user went back to the skill strip: ours `#397DB7`, the
+  second part of ours `#57B1AB`, test-time change accent `#EB6046`, baselines `#F99655` and `#8ECFB0`, ink
+  `#44546A`. Rejected: red plus green for ours, saturated royal blue or violet for a module.
+- **Panels.** No panel backgrounds, outlines or title bands (box-in-box clutter). Separate (a) and (b) with
+  whitespace and one thin dashed hairline. Panel labels follow the paper ("(a) Title" in StagePolicy, by request).
+- **Result panel.** A radar over all condition groups, never a selection (a subset with the smallest gaps left out
+  looks cherry-picked). Labels outside the ring, anchored away from the centre, nudged by a few degrees where
+  neighbours collide, no radial tick labels. Near-identical baselines differ in hue, line style and marker, with
+  the dashed one drawn on top. Fill leftover space with a "mean over all conditions" number line that reuses the
+  radar markers (it doubles as the legend) and an arc arrow with the gain ("+20.2"). The user rejected a bar chart
+  there as off-style.
+- **LaTeX.** In IEEEtran, hook `\@maketitle` and place the figure with `\captionof` (package `capt-of`). IEEEtran
+  typesets the title block twice, so add `\setcounter{figure}{1}` right after `\maketitle`, or later figures
+  skip a number. Check the page budget with a local compile after every size change.
