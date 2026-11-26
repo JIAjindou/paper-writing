@@ -41,6 +41,8 @@ RSS 2027 review). The user decides what goes in. You draft, they cut. Default to
 1. **No colons and no semicolons** anywhere in prose, captions, or tables. Split into two sentences, or join with a comma, "and", "where", or parentheses (e.g., "(1 if ... and 0 if ...)" instead of "(1: ...; 0: ...)"). Generated tables need the fix in the generator too.
 2. **Abbreviations.** Define once (`imitation learning (IL)`), then use only the abbreviation. Titles never use
    abbreviations, and bold run-in headings count as titles (`\textbf{{Reinforcement learning.}}`).
+   Do not abbreviate short terms at all: "control error" stays in full in prose and captions, and only figure
+   labels may shorten it to save space (user, 2026-11-26).
 3. **Every new variable gets its domain at first appearance**, scalars included:
    $\mathbf{s}_t\in\mathbb{R}^{d_s}$, $H\in\mathbb{N}$, $\rho\in(0,1)$. Name parameters ($\theta$) and operators
    ($\odot$, sg). Never reuse a symbol for two things, and a bold and a plain version of one letter count as the
@@ -56,6 +58,8 @@ RSS 2027 review). The user decides what goes in. You draft, they cut. Default to
    Citations woven into sentences with `\citep`. Transitions: "Notably", "To this end", "However", "Instead".
    Equation references always read "Eq.~\eqref{...}" ("the objective in Eq.~\eqref{eq:cost}"), never a bare
    `\eqref` (user, 2026-11-20).
+7b. No everyday analogies in the paper (e.g., "a driver in an unfamiliar car ..."). Make an idea intuitive by
+   ordering it as phenomenon, then mechanism, then term, not by analogy (user, 2026-11-25, StagePolicy Introduction).
 8. No marketing language ("remarkably", "significantly" without a test, "unprecedented").
    Prefer concrete numbers with units (`3.5\,ms`, `22.8 hours`, `95.0\%`).
 9. Name components by what they do, not how they are implemented (e.g., "contractive perturbation" over
@@ -183,10 +187,13 @@ Discussion to the user.
 - Reuse existing keys; grep before adding. New entries go at the end in the same style.
 - Uniform format: all conferences "Proceedings of the ..." without edition numbers (no "9th"), all journals one
   style. No `doi` and no `url` fields, except for web-only sources such as blog posts.
-- **RSS papers link every reference title** (RSS template requirement, user 2026-11-22), written as
-  `title = {\href{https://doi.org/...}{Title in Title Case}}` (arXiv abs page or publisher page when there is no
-  doi). Write every title in Title Case yourself, because the `\href` wrapper stops plainnat from changing the
-  case. The separate `doi` and `url` fields stay out.
+- **No links on reference titles** (user 2026-11-26, StagePolicy, reversing the earlier RSS `\href` rule of
+  2026-11-22). Titles are plain `title = {Title in Title Case}` with acronyms braced; no `doi` or `url` fields.
+- When the references overflow their page by a line or two, shorten very long author lists with `and others`
+  rather than dropping a citation the user wants.
+- Never shrink the reference font or spacing to meet a page budget (template formatting stays). Drop the least
+  important citations instead, long author lists first, and keep the user's own related papers (e.g., ODE Policy,
+  arXiv 2611.01729, key `jia2026ode`) (user, 2026-11-26, StagePolicy).
 - Do not cite a framework or tool to support a claim it does not make (e.g., Orbit for RL sample cost).
 - Flag arXiv IDs, venues, and years that cannot be verified (recent preprints, future venues) for manual checking.
 - **Any entry written from memory must be flagged to the user for checking**, listing the keys.
