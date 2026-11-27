@@ -208,6 +208,11 @@ blue-green ramp with ours darkest, lines alpha 0.65 / bands alpha 0.2, open fram
 text never overlapping curves. Render to PNG and look at it before pushing.
 Figures go `[!tbp]` and close to their first reference (raise `topnumber`, `topfraction`); Fig. 1 goes on page 1 between the authors and the abstract (`\teaser{...}` hook of the class, `\captionof{figure}`),
 as large as the page allows with tight title spacing (user 2026-11-01). The abstract has no left hairline or indent.
+In plain IEEEtran conference mode (RSS template, no `\teaser`), put the teaser in `sections/teaser.tex`, input it
+before `\maketitle`, and write `\let\teaserlabel\label`, `\IEEEoverridecommandlockouts` (conference mode silently
+ignores `\IEEEaftertitletext` otherwise), then `\IEEEaftertitletext{\begin{center}\includegraphics...`
+`\captionof{figure}{...}\teaserlabel{fig:overview}\end{center}}` with `\usepackage{capt-of}` (PolicyPilot,
+2026-11-27). Check in the .aux that the teaser is figure 1 on page 1.
 Project page and code links in the title block as clickable icons with a short label (fontawesome5 `\faGlobe`,
 `\faGithub`), not printed URLs (user 2026-11-01). Section numbers, links, and caption labels use the figure blue.
 
